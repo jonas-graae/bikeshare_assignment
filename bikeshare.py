@@ -75,7 +75,6 @@ def get_filters():
     print('-'*40)
     return city, month, day
 
-
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
@@ -111,7 +110,6 @@ def load_data(city, month, day):
         df = df[df['day_of_week'] == filters['days'][day-1].title()]
         
     return df
-
 
 def time_stats(df, month, day):
     """Displays statistics on the most frequent times of travel."""
@@ -224,6 +222,13 @@ def user_stats(df, city):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def display_raw_data(data):
+    get_raw_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no.\n').lower()
+    start_loc = 0
+    while get_raw_data == 'yes':
+        print(data.iloc[start_loc:start_loc + 5])
+        start_loc += 5
+        get_raw_data = input('Do you wish to continue?: ')
 
 def main():
     while True:
@@ -244,6 +249,9 @@ def main():
         
         # get stats about the users
         user_stats(df, city)
+
+        # Ask user to see five rows of raw data
+        display_raw_data(df)
 
         # Ask user to restart game
         restart = input('\nWould you like to restart? Enter yes or no.\n')
