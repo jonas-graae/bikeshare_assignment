@@ -223,12 +223,19 @@ def user_stats(df, city):
     print('-'*40)
 
 def display_raw_data(data):
+    # Counter start position for raw data
     start_loc = 0
+
+    # Loop that promptes User to see raw data
     while True:
         get_raw_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no.\n').lower()
         if get_raw_data != 'yes':
             break
+        
+        # if yes show user 5 rows of data
         print(data.iloc[start_loc:start_loc + 5])
+
+        # increase start position with 5 and show new data if user continues to see raw_data
         start_loc += 5
 
 def main():
