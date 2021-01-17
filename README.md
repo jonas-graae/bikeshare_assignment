@@ -2,10 +2,12 @@
 17/01/2021
 
 ### Project Title
-Replace the Project Title
+Bikeshare Project
 
 ### Description
 Describe what your project is about and what it does
+
+This project is my solution to assignment  2 & 3 in udacity's program "Programming for Data Science with Python".
 
 ### Files used
 Include the files used
