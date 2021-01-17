@@ -223,12 +223,13 @@ def user_stats(df, city):
     print('-'*40)
 
 def display_raw_data(data):
-    get_raw_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no.\n').lower()
     start_loc = 0
-    while get_raw_data == 'yes':
+    while True:
+        get_raw_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no.\n').lower()
+        if get_raw_data != 'yes':
+            break
         print(data.iloc[start_loc:start_loc + 5])
         start_loc += 5
-        get_raw_data = input('Do you wish to continue?: ')
 
 def main():
     while True:
